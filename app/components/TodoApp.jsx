@@ -1,9 +1,9 @@
-var React = require('react');
-var TodoList = require('TodoList');
-var AddTodo = require('AddTodo');
-var TodoSearch = require('TodoSearch');
+const React = require('react');
+const TodoList = require('TodoList');
+const AddTodo = require('AddTodo');
+const TodoSearch = require('TodoSearch');
 
-var TodoApp = React.createClass({
+const TodoApp = React.createClass({
   getInitialState: function() {
     return {
       showCompleted: false,
@@ -39,7 +39,7 @@ var TodoApp = React.createClass({
     });
   },
   render: function() {
-    var {todos} = this.state;
+    const {todos} = this.state;
 
     return (
       <div>
