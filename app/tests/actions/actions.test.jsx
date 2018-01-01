@@ -12,13 +12,31 @@ describe('Actions', () => {
     expect(res).toEqual(action);
   });
 
-  it('should generate add todo action', () => {
+  it('should generate addTodo action', () => {
     let action = {
       type: 'ADD_TODO',
       text: 'go running'
     };
 
     let res = actions.addTodo(action.text);
+    expect(res).toEqual(action);
+  });
+
+  it('should generate addTodos action object', () => {
+    const todos = [{
+      id: '123',
+      text: 'something',
+      completed: false,
+      completedAt: undefined,
+      createdAt: '123'
+    }];
+
+    const action = {
+      type: 'ADD_TODOS',
+      todos
+    };
+
+    let res = actions.addTodos(todos);
     expect(res).toEqual(action);
   });
 
