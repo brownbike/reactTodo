@@ -2,10 +2,10 @@ const React = require('react');
 const uuid = require('node-uuid');
 const moment = require('moment');
 
-const AddTodo = require('AddTodo');
 const TodoSearch = require('TodoSearch');
 const TodoAPI = require('TodoAPI');
-import TodoList from "TodoList";
+import TodoList from 'TodoList';
+import AddTodo from 'AddTodo';
 
 const TodoApp = React.createClass({
   getInitialState: function() {
