@@ -1,7 +1,7 @@
 const redux = require('redux');
 const {searchTextReducer, showCompletedReducer, todosReducer} = require('reducers');
 
-export const configure = () => {
+export const configure = (initialSate = {}) => {
   const reducer = redux.combineReducers({
     searchText: searchTextReducer,
     showCompleted: showCompletedReducer,
@@ -10,6 +10,7 @@ export const configure = () => {
 
   const store = redux.createStore(
     reducer,
+    initialSate,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   );
 
