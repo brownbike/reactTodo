@@ -15,10 +15,15 @@ describe('Actions', () => {
   it('should generate addTodo action', () => {
     let action = {
       type: 'ADD_TODO',
-      text: 'go running'
+      todo: {
+        id: '12345',
+        text: 'Do something',
+        completed: false,
+        createdAt: '123'
+      }
     };
 
-    let res = actions.addTodo(action.text);
+    let res = actions.addTodo(action.todo);
     expect(res).toEqual(action);
   });
 
