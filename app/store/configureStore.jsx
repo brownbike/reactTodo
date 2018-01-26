@@ -3,18 +3,16 @@ import thunk from 'redux-thunk';
 
 import {searchTextReducer, showCompletedReducer, todosReducer} from 'reducers';
 
-export const configure = (initialSate = {}) => {
+export const configure = (initialState = {}) => {
   const reducer = redux.combineReducers({
     searchText: searchTextReducer,
     showCompleted: showCompletedReducer,
     todos: todosReducer
   });
 
-  let createStoreWithMiddleware = redux.applyMiddleware(thunk)(redux.createStore);
-  const store = createStoreWithMiddleware(
-    reducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  );
+  const store = redux.createStore(reducer, initialState, redux.compose(
+    redux.applyMiddleware(thunk)
+  ));
 
   return store;
 };
