@@ -5,8 +5,8 @@ const moment = require('moment');
 
 export const Todo = React.createClass({
   handleToggleTodo: function() {
-    const {id, dispatch} = this.props;
-    dispatch(actions.toggleTodo(id));
+    const {id, dispatch, completed} = this.props;
+    dispatch(actions.startToggleTodo(id, !completed));
   },
   render: function() {
     const {text, completed, createdAt, completedAt} = this.props;
