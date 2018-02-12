@@ -1,9 +1,9 @@
-const React = require('react');
-const {connect} = require('react-redux');
+import React from 'react';
+import {connect} from 'react-redux';
 const actions = require('actions');
 
 export var TodoSearch = React.createClass({
-  render: function() {
+  render() {
     let {dispatch, showCompleted, searchText} = this.props;
     return (
         <div className="container__footer">

@@ -1,14 +1,14 @@
-const React = require('react');
-const {connect} = require('react-redux');
+import React from 'react';
+import {connect} from'react-redux';
+import moment from 'moment';
 const actions = require('actions');
-const moment = require('moment');
 
 export const Todo = React.createClass({
   handleToggleTodo: function() {
     const {id, dispatch, completed} = this.props;
     dispatch(actions.startToggleTodo(id, !completed));
   },
-  render: function() {
+  render() {
     const {text, completed, createdAt, completedAt} = this.props;
     let todoClassName = completed ? 'todo todo-completed' : 'todo';
     let renderDate = () => {

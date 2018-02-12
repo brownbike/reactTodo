@@ -1,5 +1,5 @@
-const React = require('react');
-const {connect} = require('react-redux');
+import React from 'react';
+import {connect} from 'react-redux';
 const actions = require('actions');
 
 export const AddTodo = React.createClass({
@@ -15,7 +15,7 @@ export const AddTodo = React.createClass({
       this.refs.todoText.focus();
     }
   },
-  render: function () {
+  render() {
     return (
       <div className="container__footer">
         <form onSubmit={this.handleSubmit}>
