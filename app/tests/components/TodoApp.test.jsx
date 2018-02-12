@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 const ReactDOM = require('react-dom');
 const {Provider} = require('react-redux');
 const expect = require('expect');
@@ -6,8 +6,9 @@ const $ = require('jQuery');
 const TestUtils = require('react-addons-test-utils');
 
 const configureStore = require('configureStore');
-import TodoList from "TodoList";
-const TodoApp = require('TodoApp');
+import TodoList from 'TodoList';
+import {TodoApp} from 'TodoApp';
+
 
 describe('TodoApp', () => {
   it('should exist', () => {

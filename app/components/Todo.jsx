@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from'react-redux';
 import moment from 'moment';
-const actions = require('actions');
+import * as actions from 'actions';
 
 export const Todo = React.createClass({
   handleToggleTodo: function() {
