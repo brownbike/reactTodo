@@ -58,9 +58,6 @@ export const startAddTodos = () => {
           ...todos[todoId]
         });
       });
-
-      console.log('parsedTodos: ', parsedTodos);
-
       dispatch(addTodos(parsedTodos));
     });
   }
@@ -104,10 +101,23 @@ export const startLogin = () => {
   }
 };
 
+export const login = (uid) => {
+  return {
+    type: 'LOGIN',
+    uid
+  }
+};
+
 export const startLogout = () => {
   return (dispatch, getState) => {
     return firebase.auth().signOut().then(() => {
       console.log('Signed out');
     });
+  }
+};
+
+export const logout = () => {
+  return {
+    type: 'LOGOUT'
   }
 };
