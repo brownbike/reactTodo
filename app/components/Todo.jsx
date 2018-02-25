@@ -3,11 +3,15 @@ import {connect} from'react-redux';
 import moment from 'moment';
 import * as actions from 'actions';
 
-export const Todo = React.createClass({
-  handleToggleTodo: function() {
+export class Todo extends React.Component {
+  constructor (props) {
+    super(props);
+    this.handleToggleTodo = this.handleToggleTodo.bind(this);
+  }
+  handleToggleTodo() {
     const {id, dispatch, completed} = this.props;
     dispatch(actions.startToggleTodo(id, !completed));
-  },
+  }
   render() {
     const {text, completed, createdAt, completedAt} = this.props;
     let todoClassName = completed ? 'todo todo-completed' : 'todo';
@@ -35,6 +39,6 @@ export const Todo = React.createClass({
       </div>
     )
   }
-});
+};
 
 export default connect()(Todo);

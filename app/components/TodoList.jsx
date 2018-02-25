@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import Todo from 'Todo';
 import TodoAPI from 'TodoAPI';
 
-export const TodoList = React.createClass({
+export class TodoList extends React.Component {
   render() {
     const {todos, showCompleted, searchText} = this.props;
     let renderTodos = () => {
@@ -29,7 +29,7 @@ export const TodoList = React.createClass({
       </div>
     )
   }
-});
+};
 
 export default connect((state) => {
   return state;
