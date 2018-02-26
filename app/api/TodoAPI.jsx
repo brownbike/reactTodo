@@ -10,7 +10,7 @@ module.exports = {
     filteredTodos = filteredTodos.filter((todo) => {
       let todoText = todo.text.toLowerCase();
 
-      return searchText.length === 0 || todoText.indexOf(searchText) > -1;
+      return searchText.length === 0 || todoText.indexOf(searchText.toLowerCase()) > -1;
     });
 
     filteredTodos.sort((a, b) => {
